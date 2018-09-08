@@ -84,8 +84,8 @@ class SearchWindow(QWidget):
 		self.table.resize(870, 500)
 		self.table.setRowCount(1000)
 		self.table.setColumnCount(8)
-		self.table.setHorizontalHeaderLabels([u"Фамилия", u'Имя', u'Отчество',
-											  u"Дата рождения", u"Возраст", u"Пол",
+		self.table.setHorizontalHeaderLabels([u"Фамилия", u'Имя', u'Отчество',\
+											  u"Дата рождения", u"Возраст", u"Пол",\
 											  u"Полис ОМС", u"Документы"])
 		self.request = "SELECT Client.id, lastName, firstName, patrName, birthdate,\
 						sex, ClientPolicy.serial, ClientPolicy.number, \
@@ -124,9 +124,9 @@ class SearchWindow(QWidget):
 				self.table.setItem(i, 1, QTableWidgetItem(data[2]))
 				self.table.setItem(i, 2, QTableWidgetItem(data[3]))
 				self.table.setItem(i, 3, QTableWidgetItem(str(data[4])))
-				self.table.setItem(i, 4, QTableWidgetItem(str(today.year - data[4].year - 
-														  ((today.month, today.day) < 
-														  (data[4].month, data[4].day)))
+				self.table.setItem(i, 4, QTableWidgetItem(str(today.year - data[4].year - \
+														  ((today.month, today.day) < \
+														  (data[4].month, data[4].day))) \
 														   + u' лет'))
 				self.table.setItem(i, 5, QTableWidgetItem(u'М' if data[5] == 1 else u'Ж'))
 				self.table.setItem(i, 6, QTableWidgetItem(data[6] + ' ' + data[7]))
